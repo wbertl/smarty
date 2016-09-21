@@ -25,7 +25,7 @@ if (defined('TYPO3_cliMode') && !defined('TYPO3_CLI_MODE')) {
 
 // Include the the smarty library if it hasn't already been loaded
 if (!defined('SMARTY_DIR')) {
-    require_once t3lib_extMgm::extPath('smarty') . 'Packages/Libraries/autoload.php';
+    require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('smarty') . 'Packages/Libraries/autoload.php';
 }
 
 // Include the smarty extension's factory class
