@@ -29,7 +29,7 @@ if (!defined('SMARTY_DIR')) {
 }
 
 // Include the smarty extension's factory class
-require_once t3lib_extMgm::extPath('smarty') . 'Classes/Factory.php';
+require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('smarty') . 'Classes/Factory.php';
 
 // Hook for clearing smarty cache
 $TYPO3_CONF_VARS['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][]
