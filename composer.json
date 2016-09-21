@@ -35,5 +35,8 @@
         "nickcernis/html-to-markdown": "self.version",
         "digitalnature/php-ref": "self.version",
         "smarty/smarty": "self.version"
-    }
+    },
+    "autoload": {
+        "classmap": ["Classes"]
+    },
 }
