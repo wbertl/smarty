@@ -71,7 +71,7 @@ class Tx_Smarty_Core_CobjectProxy
      */
     public function __call($method, array $args = array())
     {
-        if (!($GLOBALS['TSFE']->cObj instanceof tslib_cObj)) {
+        if (!($GLOBALS['TSFE']->cObj instanceof \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer)) {
             throw new RuntimeException('Unable to access "tslib_cObj"!', 1355689602);
 
         } elseif (!method_exists($GLOBALS['TSFE']->cObj, $method)) {
@@ -107,7 +107,7 @@ class Tx_Smarty_Core_CobjectProxy
     private static function setTimeTracker()
     {
         if (!is_object($GLOBALS['TT'])) {
-            $GLOBALS['TT'] = Tx_Smarty_Service_Compatibility::makeInstance('t3lib_TimeTrackNull');
+            $GLOBALS['TT'] = Tx_Smarty_Service_Compatibility::makeInstance(\TYPO3\CMS\Core\TimeTracker\NullTimeTracker::class);
         }
     }
 
@@ -119,7 +119,7 @@ class Tx_Smarty_Core_CobjectProxy
     private function setContentObject(array $data = array(), $table = '')
     {
 
-        $GLOBALS['TSFE']->cObj = Tx_Smarty_Service_Compatibility::makeInstance('tslib_cObj');
+        $GLOBALS['TSFE']->cObj = Tx_Smarty_Service_Compatibility::makeInstance(\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::class);
         $GLOBALS['TSFE']->cObj->start($data, $table);
     }
 
@@ -129,7 +129,7 @@ class Tx_Smarty_Core_CobjectProxy
      */
     private function setPageSelect()
     {
-        $GLOBALS['TSFE']->sys_page = Tx_Smarty_Service_Compatibility::makeInstance('t3lib_pageSelect');
+        $GLOBALS['TSFE']->sys_page = Tx_Smarty_Service_Compatibility::makeInstance(\TYPO3\CMS\Frontend\Page\PageRepository::class);
         $GLOBALS['TSFE']->sys_page->versioningPreview = false;
         $GLOBALS['TSFE']->sys_page->versioningWorkspaceId = false;
         $GLOBALS['TSFE']->where_hid_del = ' AND pages.deleted=0';
@@ -167,7 +167,7 @@ class Tx_Smarty_Core_CobjectProxy
                 $GLOBALS['TSFE']->csConvObj = $GLOBALS['LANG']->csConvObj;
 
             } else {
-                $GLOBALS['TSFE']->csConvObj = Tx_Smarty_Service_Compatibility::makeInstance('t3lib_cs');
+                $GLOBALS['TSFE']->csConvObj = Tx_Smarty_Service_Compatibility::makeInstance(\TYPO3\CMS\Core\Charset\CharsetConverter::class);
             }
         }
 
