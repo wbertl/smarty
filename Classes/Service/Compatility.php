@@ -118,26 +118,9 @@ class Tx_Smarty_Service_Compatibility
         $includeEmptyValues = true,
         $enableUnsetFeature = true
     ) {
-        if (class_exists('\TYPO3\CMS\Core\Utility\GeneralUtility')) {
-            return call_user_func(
-                array('\TYPO3\CMS\Core\Utility\GeneralUtility', 'array_merge_recursive_overrule'),
-                $arr0,
-                $arr1,
-                $notAddKeys,
-                $includeEmptyValues,
-                $enableUnsetFeature
-            );
-
-        } else {
-            return call_user_func(
-                array('t3lib_div', 'array_merge_recursive_overrule'),
-                $arr0,
-                $arr1,
-                $notAddKeys,
-                $includeEmptyValues,
-                $enableUnsetFeature
-            );
-        }
+		TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($arr0, $arr1, !$notAddKeys, $includeEmptyValues, $enableUnsetFeature);
+		// Our local $arr0 has been modified now, so return it as result
+		return $arr0;
     }
 
     /**

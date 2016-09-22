@@ -71,7 +71,7 @@ class Tx_Smarty_Core_CobjectProxy
      */
     public function __call($method, array $args = array())
     {
-        if (!($GLOBALS['TSFE']->cObj instanceof tslib_cObj)) {
+        if (!($GLOBALS['TSFE']->cObj instanceof \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer)) {
             throw new RuntimeException('Unable to access "tslib_cObj"!', 1355689602);
 
         } elseif (!method_exists($GLOBALS['TSFE']->cObj, $method)) {
