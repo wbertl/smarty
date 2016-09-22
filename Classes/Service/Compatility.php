@@ -91,7 +91,7 @@ class Tx_Smarty_Service_Compatibility
             return \TYPO3\CMS\Core\Utility\GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
 
         } else {
-            return \t3lib_div::getUrl($url, $includeHeader, $requestHeaders, $report);
+            return \TYPO3\CMS\Core\Utility\GeneralUtility::getUrl($url, $includeHeader, $requestHeaders, $report);
         }
     }
 

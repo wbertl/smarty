@@ -8,7 +8,7 @@ class Tx_Smarty_Utility_Typo3
      */
     public static function isFeInstance()
     {
-        return (TYPO3_MODE === 'FE' && $GLOBALS['TSFE'] instanceof tslib_fe);
+        return (TYPO3_MODE === 'FE' && $GLOBALS['TSFE'] instanceof \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController);
     }
 
     /**
@@ -17,7 +17,7 @@ class Tx_Smarty_Utility_Typo3
      */
     public static function isBeInstance()
     {
-        return (TYPO3_MODE === 'BE' && $GLOBALS['BE_USER'] instanceof t3lib_tsfeBeUserAuth);
+        return (TYPO3_MODE === 'BE' && $GLOBALS['BE_USER'] instanceof \TYPO3\CMS\Backend\FrontendBackendUserAuthentication);
     }
 
     /**

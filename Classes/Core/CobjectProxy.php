@@ -51,7 +51,7 @@ class Tx_Smarty_Core_CobjectProxy
      */
     public function __destruct()
     {
-        if ($this->tsfeBackup instanceof tslib_fe) {
+        if ($this->tsfeBackup instanceof \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController) {
             $GLOBALS['TSFE'] = $this->tsfeBackup;
         }
 
@@ -197,9 +197,9 @@ class Tx_Smarty_Core_CobjectProxy
      */
     private function setTsfe($pageId = 0, $noCache = 0)
     {
-        $this->tsfeBackup = ($GLOBALS['TSFE'] instanceof tslib_fe) ? $GLOBALS['TSFE'] : false;
+        $this->tsfeBackup = ($GLOBALS['TSFE'] instanceof \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController) ? $GLOBALS['TSFE'] : false;
         $GLOBALS['TSFE'] = Tx_Smarty_Service_Compatibility::makeInstance(
-            'tslib_fe',
+	        \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController::class,
             $GLOBALS['TYPO3_CONF_VARS'],
             $pageId,
             $noCache
