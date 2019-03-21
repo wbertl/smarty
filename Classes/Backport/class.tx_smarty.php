@@ -38,7 +38,8 @@ class tx_smarty
      */
     private static function backportSmarty($options = array())
     {
-        $callingInstance = self::getCallingInstance();
+        // does not work any more in PHP 7        
+        //$callingInstance = self::getCallingInstance();
 
         if (!isset($options['pathToLanguageFile'])) {
             $options['pathToLanguageFile'] = self::getLanguageFile($callingInstance);
