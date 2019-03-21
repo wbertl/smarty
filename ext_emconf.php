@@ -15,7 +15,7 @@ $EM_CONF['smarty'] = array(
 	'description' => 'Smarty Templating Engine for TYPO3',
 	'category' => 'misc',
 	'shy' => 0,
-	'version' => '2.5.5',
+	'version' => '2.6.5',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
@@ -35,7 +35,7 @@ $EM_CONF['smarty'] = array(
 	'constraints' => array(
 		'depends' => array(
 			'php' => '5.3.2-0.0.0',
-			'typo3' => '4.5.0-7.6.99',
+			'typo3' => '4.5.0-8.7.99',
 		),
 		'conflicts' => array(
 		),

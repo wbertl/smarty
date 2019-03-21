@@ -2,7 +2,7 @@
     "name": "rtp/smarty",
     "description": "Smarty Templating Engine for TYPO3",
     "type": "typo3-cms-extension",
-    "homepage": "https://github.com/rtp-ch/smarty",
+    "homepage": "https://github.com/wbertl/smarty.git",
     "keywords": ["templating"],
     "version": "2.3.0",
     "license": "LGPL-3.0+",
@@ -16,7 +16,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/rtp-ch/smarty.git"
+            "url": "https://github.com/wbertl/smarty.git
         }
     ],
     "config": {
