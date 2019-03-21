@@ -16,7 +16,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/wbertl/smarty.git
+            "url": "https://github.com/wbertl/smarty.git"
         }
     ],
     "config": {
