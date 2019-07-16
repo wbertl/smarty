@@ -1,6 +1,4 @@
 
-**PLEASE NOTE:** This project is no longer maintained. If you are interested in continuing the maintenance of this extension, please get in touch with us or create a fork.
-
 #Smarty Templating Engine for TYPO3
 
 ## Basic Usage
