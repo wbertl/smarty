@@ -14,7 +14,7 @@ development_environment_definitions =
 TSConstantEditor.basic {
     header = Development Environment Configuration
     description = <ul><li><span style="background:red; padding:1px 2px; color:#fff; font-weight:bold;">1</span> "Development Mode" can be used to define additional configuration options which are only active when devlopment mode has either been enabled or any of the defined server environment variables is detected.<br /> The development mode configuration can be defined in TypoScript. By default when smarty is in development mode error reporting is increased and compile as well as cache files are regenerated on every hit.<br /> Server environment variables can be defined via .htacess or in your server configuration. The following are examples of Development Environment Definitions: <dl> <dt><strong>TYPO3_MODE</strong> would match:</dt><dd>SetEnv TYPO3_MODE 1</dd><dd>SetEnv TYPO3_MODE true</dd><dd>SetEnv TYPO3_MODE on</dd> <dt><strong>TYPO3_MODE=development</strong> would match:</dt> <dd>SetEnv TYPO3_MODE development</dd> <dt><strong>TYPO3_MODE=development,DEV_MODE</strong> would match:</dt> <dd>SetEnv TYPO3_MODE development</dd><dd>SetEnv DEV_MODE 1</dd></dl></li></ul>
-    1=enable_development_mode,development_mode_contexts
+    x=enable_development_mode,development_mode_contexts
 }
 
 

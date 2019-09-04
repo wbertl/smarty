@@ -32,5 +32,5 @@ if (!defined('SMARTY_DIR')) {
 require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('smarty') . 'Classes/Factory.php';
 
 // Hook for clearing smarty cache
-$TYPO3_CONF_VARS['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][]
-    = 'EXT:smarty/Classes/Hooks/ClearCache.php:&Tx_Smarty_Hooks_ClearCache->clearSmartyCache';
+//$TYPO3_CONF_VARS['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] = 'EXT:smarty/Classes/Hooks/ClearCache.php:&Tx_Smarty_Hooks_ClearCache->clearSmartyCache';
+$TYPO3_CONF_VARS['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] = "Tuck\\Smarty\\Hooks\ClearCache->clearSmartyCache";

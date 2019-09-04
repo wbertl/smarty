@@ -1,10 +1,12 @@
 <?php
 
+namespace Tuck\Smarty\Hooks;
+
 /**
  * TODO: Implement more fine grained control over cache clearing via cache ids
  * TODO: Register alternate caching mechanisms with smarty
  */
-class Tx_Smarty_Hooks_ClearCache
+class ClearCache
 {
     /**
      * @param $params
@@ -15,7 +17,7 @@ class Tx_Smarty_Hooks_ClearCache
     public function clearSmartyCache($params, $ref)
     {
         $deletePid = intval($params['cacheCmd']) > 0 ? intval($params['cacheCmd']) : 0;
-        $chDir = Tx_Smarty_Service_Compatibility::getFileAbsFileName(Tx_Smarty_Core_Configuration::DEFAULT_CACHE_DIR);
+        $chDir = \Tx_Smarty_Service_Compatibility::getFileAbsFileName(\Tx_Smarty_Core_Configuration::DEFAULT_CACHE_DIR);
 
         if ($deletePid || $params['cacheCmd'] === 'all' || $params['cacheCmd'] === 'pages') {
             self::clearDir($chDir);
@@ -29,6 +31,6 @@ class Tx_Smarty_Hooks_ClearCache
      */
     private static function clearDir($dir)
     {
-        Tx_Smarty_Service_Compatibility::flushDirectory($dir);
+        \Tx_Smarty_Service_Compatibility::flushDirectory($dir);
     }
 }
